@@ -1,41 +1,86 @@
-﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>thiagoalvsantos</groupId>
-  <artifactId>titanio-net</artifactId>
+  <groupId>com.choudhury.blog</groupId>
+  <artifactId>distance-converter-net</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Sistema de Ágile</name>
+  <name>Distance Converter .Net</name>
   <packaging>netpack</packaging>
+  
+ <profiles> 
+ <profile>
+      <id>sonar-dotnet</id>
+      <activation>
+        <!-- Optional activation by default -->
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <!-- Location of the the .Net installations (pick the one you need) -->
+        <gallio.directory>C:/Program Files/Gallio</gallio.directory>
+        <fxcop.directory>C:/Program Files (x86)/Microsoft Fxcop 10.0</fxcop.directory>
+       <partcover.directory>C:/Program Files (x86)/PartCover/PartCover .NET 4.0</partcover.directory>
+        <sourcemonitor.directory>C:/Program Files (x86)/SourceMonitor</sourcemonitor.directory>
+        <stylecop.directory>C:/Program Files (x86)/Microsoft StyleCop 4.4.0.14</stylecop.directory>
+        
+         <!-- Location of Gendarme installation (optional) 
+        <gendarme.directory>C:/Program Files  (x86)/gendarme-2.6-bin</gendarme.directory>
+        -->
+        
+        <!-- sonar server details -->
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.jdbc.url>jdbc:derby://localhost:1527/sonar</sonar.jdbc.url>
+        <sonar.jdbc.driver>org.apache.derby.jdbc.ClientDriver</sonar.jdbc.driver>
+        <sonar.jdbc.username>sonar</sonar.jdbc.username>
+        <sonar.jdbc.password>sonar</sonar.jdbc.password>
+        
+      </properties>
+   </profile>
+   
+   </profiles>
 
   <properties>
-    <!-- NOTE : the versions and parameters may be defined as properties 
-       Prefer this option to the plugin specific configuration as it may be accessible to several plugins
-    -->
-    <visual.studio.solution>Titanio.sln</visual.studio.solution>
-    <visual.test.project.pattern>*.Tests</visual.test.project.pattern>
+    
+    <visual.studio.solution>DistanceConverter.sln</visual.studio.solution>
+    <visual.test.project.pattern>*.Tests;*.Test</visual.test.project.pattern>
     <dotnet.tool.version>3.5</dotnet.tool.version>
     <sonar.language>cs</sonar.language>
-    <!-- Info added to check that the C# plugin works correctly with the SCM plugin -->
-    <sonar.scm.url>scm:svn:http://svn.codehaus.org/sonar-plugins/trunk/dotnet/tools/dotnet-tools-commons/src/test/resources/solution/Example</sonar.scm.url>
+    
+    
+    
+    <!-- Version of silverlight in case the analysed solution contains silverlight project 
+    Possible values are 3 and 4
+    Default value is 4 -->
+    <silverlight.version>4</silverlight.version>
+    
   </properties>
+  
   <build>
     <plugins>
       <plugin>
         <groupId>org.codehaus.sonar-plugins.dotnet</groupId>
         <artifactId>maven-dotnet-plugin</artifactId>
-        <version>1.0</version>
-        <!-- Possible definition of projects parameters -->
+        <version>0.6</version>
         <!--
+         <executions>
+        <execution>
         <configuration>
-          <testProjectPattern>*.Tests</testProjectPattern>
-          <solutionName>Example.sln</solutionName>
+          
+          
+          <testProjectPattern>*.Tests;*.Test</testProjectPattern>
+          <solutionName>DistanceConverter.sln</solutionName>
           <toolVersion>3.5</toolVersion>
+          
           <buildConfigurations>
             <buildConfiguration>Debug</buildConfiguration>
             <buildConfiguration>Release</buildConfiguration>
           </buildConfigurations>
+          
+          
         </configuration>
+        </execution>
+         </executions>
         -->
         <extensions>true</extensions>
+        
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -46,5 +91,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
