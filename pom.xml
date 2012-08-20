@@ -56,18 +56,18 @@
         <groupId>org.codehaus.sonar-plugins.dotnet</groupId>
         <artifactId>maven-dotnet-plugin</artifactId>
         <version>0.6</version>
-        <!--
+        <!---->
          <executions>
         <execution>
         <configuration>
           
           
           <testProjectPattern>*.Tests;*.Test</testProjectPattern>
-          <solutionName>DistanceConverter.sln</solutionName>
+          <solutionName>Titanio.sln</solutionName>
           <toolVersion>3.5</toolVersion>
           
           <buildConfigurations>
-            <buildConfiguration>Debug</buildConfiguration>
+            
             <buildConfiguration>Release</buildConfiguration>
           </buildConfigurations>
           
@@ -75,7 +75,7 @@
         </configuration>
         </execution>
          </executions>
-        -->
+        
         <extensions>true</extensions>
         
       </plugin>
