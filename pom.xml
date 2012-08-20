@@ -36,7 +36,7 @@
 
   <properties>
     
-    <visual.studio.solution>DistanceConverter.sln</visual.studio.solution>
+    <visual.studio.solution>Titanio.sln</visual.studio.solution>
     <visual.test.project.pattern>*.Tests;*.Test</visual.test.project.pattern>
     <dotnet.tool.version>3.5</dotnet.tool.version>
     <sonar.language>cs</sonar.language>
@@ -56,7 +56,7 @@
         <groupId>org.codehaus.sonar-plugins.dotnet</groupId>
         <artifactId>maven-dotnet-plugin</artifactId>
         <version>0.6</version>
-        <!---->
+        <!--
          <executions>
         <execution>
         <configuration>
@@ -75,7 +75,7 @@
         </configuration>
         </execution>
          </executions>
-        
+        -->
         <extensions>true</extensions>
         
       </plugin>
