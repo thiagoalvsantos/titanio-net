@@ -16,7 +16,7 @@
       <properties>
         <!-- Location of the the .Net installations (pick the one you need) -->
         <gallio.directory>C:/Program Files/Gallio</gallio.directory>
-        <fxcop.directory>C:/Program Files (x86)/Microsoft FxCop 1.36</fxcop.directory>
+        <fxcop.directory>C:/Program Files (x86)/Microsoft Fxcop 10.0</fxcop.directory>
        <partcover.directory>C:/Program Files (x86)/PartCover/PartCover .NET 4.0</partcover.directory>
         <sourcemonitor.directory>C:/Program Files (x86)/SourceMonitor</sourcemonitor.directory>
         <stylecop.directory>C:/Program Files (x86)/Microsoft StyleCop 4.4.0.14</stylecop.directory>
